@@ -60,3 +60,6 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Don't include the binary model.
+model/GoogleNews-vectors-negative300.bin
