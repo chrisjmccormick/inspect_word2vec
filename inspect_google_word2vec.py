@@ -14,16 +14,13 @@ import logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 # Load Google's pre-trained Word2Vec model.
-#model = gensim.models.Word2Vec.load_word2vec_format('./model/GoogleNews-vectors-negative300.bin', binary=True)  
-
-
+model = gensim.models.Word2Vec.load_word2vec_format('./model/GoogleNews-vectors-negative300.bin', binary=True)  
 
 # Does the model include stop words?
 print("Does it include the stop words like \'a\', \'and\', \'the\'? %d %d %d" % ('a' in model.vocab, 'and' in model.vocab, 'the' in model.vocab))
 
-
-
-# Retrieve the entire list of "words" from the Google Word2Vec model.
+# Retrieve the entire list of "words" from the Google Word2Vec model, and write
+# these out to text files so we can peruse them.
 vocab = model.vocab.keys()
 
 fileNum = 1
